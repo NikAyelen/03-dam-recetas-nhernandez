@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 127, 1, 133),
+      backgroundColor: const Color.fromARGB(255, 190, 216, 218),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -32,7 +32,8 @@ class _SplashScreenState extends State<SplashScreen>{
           SizedBox(height: 16,),
           Text("Recetas App", style: TextStyle(color: Colors.white, fontSize: 28),),
           SizedBox(height: 24,),
-          CircularProgressIndicator(color: Colors.white,)
+          CircularProgressIndicator(color: Colors.white,),
+          Center()
         ],
       ),
     );
