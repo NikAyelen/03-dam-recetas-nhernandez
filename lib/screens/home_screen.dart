@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recetas_app/models/receta.dart';
 import 'package:recetas_app/services/recipe_service.dart';
 import 'package:recetas_app/widgets/receta_card.dart';
+import 'package:recetas_app/screens/detalle_receta_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -39,7 +40,18 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(vertical: 8),
             itemCount: recetas.length,
             itemBuilder: (context, index) {
-              return RecetaCard(receta: recetas[index]);
+              final receta = recetas[index];
+              return RecetaCard(
+                receta: receta,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetalleRecetaScreen(receta: receta),
+                    ),
+                  );
+                },
+              );
             },
           );
         },
